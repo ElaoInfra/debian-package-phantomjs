@@ -1,0 +1,9 @@
+[Unit]
+Description=Full web stack, no browser required
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/phantomjs
+
+[Install]
+WantedBy=multi-user.target
