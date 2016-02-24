@@ -63,9 +63,9 @@ build-package@debian-jessie:
 	cd ~/fpm && git checkout afbb266
 	cd ~/fpm && make install
 	# Dependencies
-	apt-get -y install wget bzip2
+	apt-get -y install curl bzip2
 	# Get origin package
-	wget ${PACKAGE_SOURCE}/phantomjs-${PACKAGE_VERSION}-linux-x86_64.tar.bz2 -O ~/origin.tar.bz2
+	curl -L ${PACKAGE_SOURCE}/phantomjs-${PACKAGE_VERSION}-linux-x86_64.tar.bz2 -o ~/origin.tar.bz2
 	mkdir -p ~/origin
 	tar xfv ~/origin.tar.bz2 -C ~/origin --strip-components=1
 	# Prepare package
